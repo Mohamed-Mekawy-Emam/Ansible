@@ -1,0 +1,15 @@
+---
+- name: Create New Users
+  hosts: all
+  tasks:
+    - name: Create User Task
+      user:
+        name: "{{ item }}"
+        state: present
+        shell: /bin/bash
+        # groups: "postgres, barman"
+        #append: yes
+      loop:
+        - postgres
+        - barman
+...

@@ -1,0 +1,12 @@
+---
+
+- name: Shell Echo test1
+  shell:
+    "echo test1"
+
+- name: Show host's ip
+  debug:
+    msg: "{{ ansible_ssh_host }}"
+  register: role1status
+
+...    

@@ -1,0 +1,56 @@
+---
+- name: test roles
+  hosts: all
+  become: yes
+  become_user: root
+
+  vars_files:
+    - vars/global.yml
+
+  vars:
+    - srcdir: /apps/samplesrcapp
+
+  pre_tasks:
+    - name: start pretask
+      debug: msg="starting"
+
+  roles:
+    - role1
+    - role2
+
+  tasks:
+    - name : start task
+      debug: msg="still working"
+      when: role1status is changed
+    - name : start tasks
+      debug: msg="still working"
+      when: role2status is changed
+
+    - name : install dependencies before starting
+      become: yes
+      register: aptinstall
+      apt:
+        name: 
+          - nodejs
+          - npm
+          - git
+        state: latest
+        update_cache: yes
+
+    - name : validate the nodejs installation
+      debug: msg="Installation of node is Successfull"
+      when: aptinstall is changed
+
+    - name: Version of Node and NPM
+      shell:
+        "npm -v && nodejs -v"
+      register: versioninfo
+
+    - name: Validate if the installation is intact
+      assert:
+        that: "versioninfo is changed"
+
+  post_tasks:
+    - name: start posttask
+      debug: msg="Done"
+...

@@ -1,0 +1,14 @@
+---
+- name: Create New Group
+  hosts: all
+  tasks:
+    - name: Create postgres Group Task
+      group:
+        name: postgres
+        state: present
+    - name: Create barman Group Task
+      group:
+        name: barman
+        state: present
+...
+

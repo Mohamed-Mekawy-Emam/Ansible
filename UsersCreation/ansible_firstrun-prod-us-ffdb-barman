@@ -1,0 +1,300 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [cloudwatch-agent : set_fact] *********************************************
+ok: [localhost]
+
+TASK [Check if amazon-cloudwatch-agent is installed] ***************************
+ok: [localhost]
+
+TASK [Check if amazon-cloudwatch-agent is installed] ***************************
+skipping: [localhost]
+
+TASK [Copy default amazon-cloudwatch-agent.service if needed as it was broken by previous configuration] ***
+changed: [localhost]
+
+TASK [cloudwatch-agent : Create a ./tmp/folder for all the files] **************
+changed: [localhost]
+
+TASK [cloudwatch-agent : Download CWA install (RHEL)] **************************
+changed: [localhost]
+
+TASK [cloudwatch-agent : Install Cloudwatch Agent RPM] *************************
+changed: [localhost]
+
+TASK [cloudwatch-agent : remove ./tmp/ folder] *********************************
+changed: [localhost]
+
+TASK [cloudwatch-agent : Create a ./tmp/folder for all the files] **************
+skipping: [localhost]
+
+TASK [cloudwatch-agent : Download CWA installer (DEB)] *************************
+skipping: [localhost]
+
+TASK [cloudwatch-agent : Install Cloudwatch Agent DEB] *************************
+skipping: [localhost]
+
+TASK [cloudwatch-agent : remove ./tmp/ folder] *********************************
+skipping: [localhost]
+
+TASK [Check if /opt/aws/amazon-cloudwatch-agent/bin/config.json exists] ********
+ok: [localhost]
+
+TASK [Copy default /opt/aws/amazon-cloudwatch-agent/bin/config.json if needed] ***
+changed: [localhost]
+
+TASK [cloudwatch-agent : Check if /opt/rantandrave/automation/platform.options exists] ***
+ok: [localhost]
+
+TASK [cloudwatch-agent : Creating platform.options file if not exists] *********
+changed: [localhost]
+
+TASK [cloudwatch-agent : Ensure any templateable files are populated from templates] ***
+skipping: [localhost] => (item=opt) 
+skipping: [localhost] => (item=opt/aws) 
+skipping: [localhost] => (item=opt/aws/amazon-cloudwatch-agent) 
+skipping: [localhost] => (item=opt/aws/amazon-cloudwatch-agent/bin) 
+changed: [localhost] => (item=opt/aws/amazon-cloudwatch-agent/bin/config.json)
+
+TASK [cloudwatch-agent : Ensure cloudwatch agent is running, and enabled on boot] ***
+changed: [localhost]
+
+TASK [configure : Create the Ansible group] ************************************
+ok: [localhost]
+
+TASK [configure : Create the admin group] **************************************
+ok: [localhost]
+
+TASK [configure : Create the devel group] **************************************
+ok: [localhost]
+
+TASK [configure : Create the users group] **************************************
+ok: [localhost]
+
+TASK [configure : Add Users] ***************************************************
+changed: [localhost] => (item=Chris Breaux)
+skipping: [localhost] => (item=Hugo Palacios (MLogica)) 
+skipping: [localhost] => (item=Jay Caldicott) 
+changed: [localhost] => (item=Marian Morrison)
+skipping: [localhost] => (item=Damien Clark) 
+changed: [localhost] => (item=Lee Esposo)
+changed: [localhost] => (item=Ansible User)
+changed: [localhost] => (item=John McDonnell)
+changed: [localhost] => (item=Varthni Vigneshwaran)
+skipping: [localhost] => (item=Ziad Osama) 
+changed: [localhost] => (item=Andy Chase)
+changed: [localhost] => (item=Danny Tijerina)
+changed: [localhost] => (item=Kadie Aasar)
+changed: [localhost] => (item=Mohammed Emam)
+skipping: [localhost] => (item=Muhamed Morsi) 
+changed: [localhost] => (item=Beckie Powell)
+skipping: [localhost] => (item=Paul Mofid) 
+changed: [localhost] => (item=Robbie Blanas)
+skipping: [localhost] => (item=Peter Bocz) 
+changed: [localhost] => (item=Aseeb Khan)
+changed: [localhost] => (item=Dean Mutam)
+skipping: [localhost] => (item=Denise Godfrey) 
+changed: [localhost] => (item=Pawel Roman)
+changed: [localhost] => (item=Duncan Morton)
+changed: [localhost] => (item=Lewis Hodder)
+changed: [localhost] => (item=Ased Mustafa)
+changed: [localhost] => (item=CD Jenkins User)
+skipping: [localhost] => (item=Roger Hosto) 
+changed: [localhost] => (item=Rashid Mahmood)
+skipping: [localhost] => (item=Sam Tulip) 
+changed: [localhost] => (item=Amir Yasin)
+skipping: [localhost] => (item=Kerry Norton) 
+changed: [localhost] => (item=Adrian Glogowski)
+changed: [localhost] => (item=Brett Hay)
+changed: [localhost] => (item=mickey cosier)
+changed: [localhost] => (item=Sudeshna Bandyopadhyay)
+changed: [localhost] => (item=wayne martin)
+[WARNING]: The input password appears not to have been hashed. The 'password'
+argument must be encrypted for this module to work properly.
+
+TASK [configure : User SSH keys] ***********************************************
+changed: [localhost] => (item=Chris Breaux)
+skipping: [localhost] => (item=Hugo Palacios (MLogica)) 
+skipping: [localhost] => (item=Jay Caldicott) 
+failed: [localhost] (item=Marian Morrison) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "mmorrison", "value": {"gecos": "Marian Morrison", "passwd": "$6$YiZL0E6C$OMGhaOUv02jIvkDauBfkPqoyJg.Zi.e8UHJlRz7b9XzIwNkyRkrm7jtN0C1dHe3TyYMS.xcgaTeFs8Nm946by/", "state": "present", "username": "mmorrison"}}, "msg": "invalid key specified: !!"}
+skipping: [localhost] => (item=Damien Clark) 
+changed: [localhost] => (item=Lee Esposo)
+ok: [localhost] => (item=Ansible User)
+changed: [localhost] => (item=John McDonnell)
+failed: [localhost] (item=Varthni Vigneshwaran) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "vvigneshwaran", "value": {"gecos": "Varthni Vigneshwaran", "passwd": "$6$fxXS9S8I$fKnb8UypTn.RLqn8f0JZd7cQ2nEh0zg9wVtV0sP58niS4b0O3PF4zXOWmn66FATnIWRnlKweMqGUi.pMlKdTp1", "state": "present", "username": "vvigneshwaran"}}, "msg": "invalid key specified: !!"}
+skipping: [localhost] => (item=Ziad Osama) 
+failed: [localhost] (item=Andy Chase) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "anchase", "value": {"gecos": "Andy Chase", "passwd": "$6$cUdYpJjw$zEQ/agxEVUhwvaFqtoXvYoZOtfZLFwNRSfM27WpuLJzpMhoPg6vVpQUg9wszI2Li2aFxLJpAK0MXcjwHiobNx.", "state": "present", "username": "anchase"}}, "msg": "invalid key specified: !!"}
+changed: [localhost] => (item=Danny Tijerina)
+failed: [localhost] (item=Kadie Aasar) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "kaasar", "value": {"gecos": "Kadie Aasar", "passwd": "$6$11hFtiAb$MYHul/3dIPhOfbTMABkmQ2dQycB2cy1TNx8iLNr4LLdCJS30yUrpOmgY2BkLSAkbd5ew1T9NjtVUFfoj2C/.00", "state": "present", "username": "kaasar"}}, "msg": "invalid key specified: !!"}
+changed: [localhost] => (item=Mohammed Emam)
+skipping: [localhost] => (item=Muhamed Morsi) 
+failed: [localhost] (item=Beckie Powell) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "bpowell", "value": {"gecos": "Beckie Powell", "passwd": "$6$buAvS/hn$QB9es5A2ZOa3h4Xlx3pvo2ixjyJ7.XFRSHGeLAFzoNz1XGg7Uh9oP2GgSEtZTO/mi0UMgmdITIE0CBbUf9xCf/", "state": "present", "username": "bpowell"}}, "msg": "invalid key specified: !!"}
+skipping: [localhost] => (item=Paul Mofid) 
+changed: [localhost] => (item=Robbie Blanas)
+skipping: [localhost] => (item=Peter Bocz) 
+failed: [localhost] (item=Aseeb Khan) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "akhan", "value": {"gecos": "Aseeb Khan", "passwd": "$6$o9l5sY3q$g3lYuPhlb5SJFREeR/lVWz05mdTmf1EmaxCB7c72oTencF4omoLGu4PgJpez7whtS0R46CW9jAlRdCsBgs4H.0", "state": "present", "username": "akhan"}}, "msg": "invalid key specified: !!"}
+changed: [localhost] => (item=Dean Mutam)
+skipping: [localhost] => (item=Denise Godfrey) 
+changed: [localhost] => (item=Pawel Roman)
+changed: [localhost] => (item=Duncan Morton)
+changed: [localhost] => (item=Lewis Hodder)
+changed: [localhost] => (item=Ased Mustafa)
+changed: [localhost] => (item=CD Jenkins User)
+skipping: [localhost] => (item=Roger Hosto) 
+changed: [localhost] => (item=Rashid Mahmood)
+skipping: [localhost] => (item=Sam Tulip) 
+changed: [localhost] => (item=Amir Yasin)
+skipping: [localhost] => (item=Kerry Norton) 
+changed: [localhost] => (item=Adrian Glogowski)
+changed: [localhost] => (item=Brett Hay)
+changed: [localhost] => (item=mickey cosier)
+failed: [localhost] (item=Sudeshna Bandyopadhyay) => {"ansible_loop_var": "item", "changed": false, "item": {"key": "sbandyopadhyay", "value": {"gecos": "Sudeshna Bandyopadhyay", "passwd": "$6$1jX5neKS$TRncoGyOjy5EMYCMXhhCR8fcZ2djJvsIjtw/05YaM8uDiltpPoIDIklFkrIC4GNuxPhFrXPV2qXMmeCcBmJNC.", "state": "present", "username": "sbandyopadhyay"}}, "msg": "invalid key specified: !!"}
+changed: [localhost] => (item=wayne martin)
+...ignoring
+
+TASK [configure : Remove Users] ************************************************
+skipping: [localhost] => (item=Chris Breaux) 
+ok: [localhost] => (item=Hugo Palacios (MLogica))
+ok: [localhost] => (item=Jay Caldicott)
+skipping: [localhost] => (item=Marian Morrison) 
+ok: [localhost] => (item=Damien Clark)
+skipping: [localhost] => (item=Lee Esposo) 
+skipping: [localhost] => (item=Ansible User) 
+skipping: [localhost] => (item=John McDonnell) 
+skipping: [localhost] => (item=Varthni Vigneshwaran) 
+ok: [localhost] => (item=Ziad Osama)
+skipping: [localhost] => (item=Andy Chase) 
+skipping: [localhost] => (item=Danny Tijerina) 
+skipping: [localhost] => (item=Kadie Aasar) 
+skipping: [localhost] => (item=Mohammed Emam) 
+ok: [localhost] => (item=Muhamed Morsi)
+skipping: [localhost] => (item=Beckie Powell) 
+ok: [localhost] => (item=Paul Mofid)
+skipping: [localhost] => (item=Robbie Blanas) 
+ok: [localhost] => (item=Peter Bocz)
+skipping: [localhost] => (item=Aseeb Khan) 
+skipping: [localhost] => (item=Dean Mutam) 
+ok: [localhost] => (item=Denise Godfrey)
+skipping: [localhost] => (item=Pawel Roman) 
+skipping: [localhost] => (item=Duncan Morton) 
+skipping: [localhost] => (item=Lewis Hodder) 
+skipping: [localhost] => (item=Ased Mustafa) 
+skipping: [localhost] => (item=CD Jenkins User) 
+ok: [localhost] => (item=Roger Hosto)
+skipping: [localhost] => (item=Rashid Mahmood) 
+ok: [localhost] => (item=Sam Tulip)
+skipping: [localhost] => (item=Amir Yasin) 
+ok: [localhost] => (item=Kerry Norton)
+skipping: [localhost] => (item=Adrian Glogowski) 
+skipping: [localhost] => (item=Brett Hay) 
+skipping: [localhost] => (item=mickey cosier) 
+skipping: [localhost] => (item=Sudeshna Bandyopadhyay) 
+skipping: [localhost] => (item=wayne martin) 
+
+TASK [configure : Ensure user directory is removed] ****************************
+skipping: [localhost] => (item=Chris Breaux) 
+ok: [localhost] => (item=Hugo Palacios (MLogica))
+ok: [localhost] => (item=Jay Caldicott)
+skipping: [localhost] => (item=Marian Morrison) 
+ok: [localhost] => (item=Damien Clark)
+skipping: [localhost] => (item=Lee Esposo) 
+skipping: [localhost] => (item=Ansible User) 
+skipping: [localhost] => (item=John McDonnell) 
+skipping: [localhost] => (item=Varthni Vigneshwaran) 
+ok: [localhost] => (item=Ziad Osama)
+skipping: [localhost] => (item=Andy Chase) 
+skipping: [localhost] => (item=Danny Tijerina) 
+skipping: [localhost] => (item=Kadie Aasar) 
+skipping: [localhost] => (item=Mohammed Emam) 
+ok: [localhost] => (item=Muhamed Morsi)
+skipping: [localhost] => (item=Beckie Powell) 
+ok: [localhost] => (item=Paul Mofid)
+skipping: [localhost] => (item=Robbie Blanas) 
+ok: [localhost] => (item=Peter Bocz)
+skipping: [localhost] => (item=Aseeb Khan) 
+skipping: [localhost] => (item=Dean Mutam) 
+ok: [localhost] => (item=Denise Godfrey)
+skipping: [localhost] => (item=Pawel Roman) 
+skipping: [localhost] => (item=Duncan Morton) 
+skipping: [localhost] => (item=Lewis Hodder) 
+skipping: [localhost] => (item=Ased Mustafa) 
+skipping: [localhost] => (item=CD Jenkins User) 
+ok: [localhost] => (item=Roger Hosto)
+skipping: [localhost] => (item=Rashid Mahmood) 
+ok: [localhost] => (item=Sam Tulip)
+skipping: [localhost] => (item=Amir Yasin) 
+ok: [localhost] => (item=Kerry Norton)
+skipping: [localhost] => (item=Adrian Glogowski) 
+skipping: [localhost] => (item=Brett Hay) 
+skipping: [localhost] => (item=mickey cosier) 
+skipping: [localhost] => (item=Sudeshna Bandyopadhyay) 
+skipping: [localhost] => (item=wayne martin) 
+
+TASK [configure : Create the SSHd config file set ownership and permissions] ***
+changed: [localhost]
+
+TASK [configure : Restart OpenSSH service if changed] **************************
+skipping: [localhost]
+
+TASK [configure : Make .ssh directory for root] ********************************
+changed: [localhost]
+
+TASK [configure : Add bitbucket to known hosts] ********************************
+ok: [localhost]
+
+TASK [configure : Copy over all files to modprobe.d] ***************************
+ok: [localhost] => (item=disable_uncommon_filesystems.conf)
+changed: [localhost] => (item=disable_uncommon_protocols.conf)
+
+TASK [configure : Copy over all files to sudoers.d] ****************************
+changed: [localhost] => (item=admin_group)
+ok: [localhost] => (item=ansible)
+changed: [localhost] => (item=ansible_group)
+changed: [localhost] => (item=devel_group)
+
+TASK [configure : Make monitoring directory for root] **************************
+changed: [localhost]
+
+TASK [configure : Copy over all static files] **********************************
+skipping: [localhost] => (item=rantandrave) 
+skipping: [localhost] => (item=rantandrave/monitoring) 
+changed: [localhost] => (item=rantandrave/monitoring/check_postgresql_stats.sh)
+changed: [localhost] => (item=rantandrave/monitoring/check_process_stats.sh)
+changed: [localhost] => (item=rantandrave/monitoring/check_services_active.sh)
+changed: [localhost] => (item=rantandrave/monitoring/check_system_stats.sh)
+changed: [localhost] => (item=rantandrave/monitoring/quaemons)
+
+TASK [configure : Check if vagrant home folder exists] *************************
+ok: [localhost]
+
+TASK [configure : Check to see if mail aliases file is present in /etc/aliases] ***
+ok: [localhost]
+
+TASK [configure : Remove any root mail aliases] ********************************
+ok: [localhost]
+
+TASK [configure : Run newaliases and creates aliases] **************************
+skipping: [localhost]
+
+TASK [configure : register hostname] *******************************************
+changed: [localhost]
+
+TASK [configure : System Status cron] ******************************************
+changed: [localhost]
+
+TASK [configure : Process Status cron] *****************************************
+skipping: [localhost]
+
+TASK [configure : Create Cron job for postgres monitoring script] **************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "crontab:  user `postgres' unknown\n"}
+
+RUNNING HANDLER [cloudwatch-agent : cloudwatch_agent_fetch_config] *************
+
+RUNNING HANDLER [cloudwatch-agent : restart_amazon_cloudwatch_agent] ***********
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=34   changed=19   unreachable=0    failed=1    skipped=8    rescued=0    ignored=1   
+

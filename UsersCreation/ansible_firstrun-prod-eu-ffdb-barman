@@ -1,0 +1,406 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [configure : Create the Ansible group] ************************************
+ok: [localhost]
+
+TASK [configure : Create the admin group] **************************************
+ok: [localhost]
+
+TASK [configure : Create the devel group] **************************************
+ok: [localhost]
+
+TASK [configure : Create the users group] **************************************
+ok: [localhost]
+
+TASK [configure : Add Users] ***************************************************
+changed: [localhost] => (item=Alpana Verma)
+changed: [localhost] => (item=Jay Caldicott)
+skipping: [localhost] => (item=Wojciech Nowak (Objectivity)) 
+changed: [localhost] => (item=Damien Clark)
+changed: [localhost] => (item=Ansible User)
+changed: [localhost] => (item=John McDonnell)
+changed: [localhost] => (item=Ian Sharp)
+changed: [localhost] => (item=James Fountain)
+changed: [localhost] => (item=Swati Bagga)
+skipping: [localhost] => (item=Sabrina Barnett-Alexander) 
+changed: [localhost] => (item=Annick Tremblet)
+changed: [localhost] => (item=Paul Mofid)
+skipping: [localhost] => (item=Kyle Potter) 
+changed: [localhost] => (item=Mark Summers)
+changed: [localhost] => (item=Lewis Hodder)
+skipping: [localhost] => (item=Paulius Malinauskas) 
+changed: [localhost] => (item=Ted McCluskey)
+changed: [localhost] => (item=Duncan Morton)
+skipping: [localhost] => (item=Bartłomiej Wójcik (Objectivity)) 
+skipping: [localhost] => (item=Maciej Toporowicz (Objectivity)) 
+changed: [localhost] => (item=Dom Gallagher)
+changed: [localhost] => (item=CD Jenkins User)
+changed: [localhost] => (item=Emma Phillips)
+skipping: [localhost] => (item=Shakil Mahmood) 
+skipping: [localhost] => (item=Costa Vorontsov) 
+changed: [localhost] => (item=Pavithra Katti)
+changed: [localhost] => (item=Sam Tulip)
+skipping: [localhost] => (item=Kerry Norton) 
+skipping: [localhost] => (item=Agnieszka Patalas (Objectivity)) 
+changed: [localhost] => (item=Brett Hay)
+
+TASK [configure : User SSH keys] ***********************************************
+changed: [localhost] => (item=Alpana Verma)
+changed: [localhost] => (item=Jay Caldicott)
+skipping: [localhost] => (item=Wojciech Nowak (Objectivity)) 
+changed: [localhost] => (item=Damien Clark)
+ok: [localhost] => (item=Ansible User)
+changed: [localhost] => (item=John McDonnell)
+changed: [localhost] => (item=Ian Sharp)
+changed: [localhost] => (item=James Fountain)
+changed: [localhost] => (item=Swati Bagga)
+skipping: [localhost] => (item=Sabrina Barnett-Alexander) 
+changed: [localhost] => (item=Annick Tremblet)
+changed: [localhost] => (item=Paul Mofid)
+skipping: [localhost] => (item=Kyle Potter) 
+changed: [localhost] => (item=Mark Summers)
+changed: [localhost] => (item=Lewis Hodder)
+skipping: [localhost] => (item=Paulius Malinauskas) 
+changed: [localhost] => (item=Ted McCluskey)
+changed: [localhost] => (item=Duncan Morton)
+skipping: [localhost] => (item=Bartłomiej Wójcik (Objectivity)) 
+skipping: [localhost] => (item=Maciej Toporowicz (Objectivity)) 
+changed: [localhost] => (item=Dom Gallagher)
+changed: [localhost] => (item=CD Jenkins User)
+changed: [localhost] => (item=Emma Phillips)
+skipping: [localhost] => (item=Shakil Mahmood) 
+skipping: [localhost] => (item=Costa Vorontsov) 
+changed: [localhost] => (item=Pavithra Katti)
+changed: [localhost] => (item=Sam Tulip)
+skipping: [localhost] => (item=Kerry Norton) 
+skipping: [localhost] => (item=Agnieszka Patalas (Objectivity)) 
+changed: [localhost] => (item=Brett Hay)
+
+TASK [configure : Remove Users] ************************************************
+skipping: [localhost] => (item=Alpana Verma) 
+skipping: [localhost] => (item=Jay Caldicott) 
+ok: [localhost] => (item=Wojciech Nowak (Objectivity))
+skipping: [localhost] => (item=Damien Clark) 
+skipping: [localhost] => (item=Ansible User) 
+skipping: [localhost] => (item=John McDonnell) 
+skipping: [localhost] => (item=Ian Sharp) 
+skipping: [localhost] => (item=James Fountain) 
+skipping: [localhost] => (item=Swati Bagga) 
+ok: [localhost] => (item=Sabrina Barnett-Alexander)
+skipping: [localhost] => (item=Annick Tremblet) 
+skipping: [localhost] => (item=Paul Mofid) 
+ok: [localhost] => (item=Kyle Potter)
+skipping: [localhost] => (item=Mark Summers) 
+skipping: [localhost] => (item=Lewis Hodder) 
+ok: [localhost] => (item=Paulius Malinauskas)
+skipping: [localhost] => (item=Ted McCluskey) 
+skipping: [localhost] => (item=Duncan Morton) 
+ok: [localhost] => (item=Bartłomiej Wójcik (Objectivity))
+ok: [localhost] => (item=Maciej Toporowicz (Objectivity))
+skipping: [localhost] => (item=Dom Gallagher) 
+skipping: [localhost] => (item=CD Jenkins User) 
+skipping: [localhost] => (item=Emma Phillips) 
+ok: [localhost] => (item=Shakil Mahmood)
+ok: [localhost] => (item=Costa Vorontsov)
+skipping: [localhost] => (item=Pavithra Katti) 
+skipping: [localhost] => (item=Sam Tulip) 
+ok: [localhost] => (item=Kerry Norton)
+ok: [localhost] => (item=Agnieszka Patalas (Objectivity))
+skipping: [localhost] => (item=Brett Hay) 
+
+TASK [configure : Ensure user directory is removed] ****************************
+skipping: [localhost] => (item=Alpana Verma) 
+skipping: [localhost] => (item=Jay Caldicott) 
+ok: [localhost] => (item=Wojciech Nowak (Objectivity))
+skipping: [localhost] => (item=Damien Clark) 
+skipping: [localhost] => (item=Ansible User) 
+skipping: [localhost] => (item=John McDonnell) 
+skipping: [localhost] => (item=Ian Sharp) 
+skipping: [localhost] => (item=James Fountain) 
+skipping: [localhost] => (item=Swati Bagga) 
+ok: [localhost] => (item=Sabrina Barnett-Alexander)
+skipping: [localhost] => (item=Annick Tremblet) 
+skipping: [localhost] => (item=Paul Mofid) 
+ok: [localhost] => (item=Kyle Potter)
+skipping: [localhost] => (item=Mark Summers) 
+skipping: [localhost] => (item=Lewis Hodder) 
+ok: [localhost] => (item=Paulius Malinauskas)
+skipping: [localhost] => (item=Ted McCluskey) 
+skipping: [localhost] => (item=Duncan Morton) 
+ok: [localhost] => (item=Bartłomiej Wójcik (Objectivity))
+ok: [localhost] => (item=Maciej Toporowicz (Objectivity))
+skipping: [localhost] => (item=Dom Gallagher) 
+skipping: [localhost] => (item=CD Jenkins User) 
+skipping: [localhost] => (item=Emma Phillips) 
+ok: [localhost] => (item=Shakil Mahmood)
+ok: [localhost] => (item=Costa Vorontsov)
+skipping: [localhost] => (item=Pavithra Katti) 
+skipping: [localhost] => (item=Sam Tulip) 
+ok: [localhost] => (item=Kerry Norton)
+ok: [localhost] => (item=Agnieszka Patalas (Objectivity))
+skipping: [localhost] => (item=Brett Hay) 
+
+TASK [configure : Create the SSHd config file set ownership and permissions] ***
+changed: [localhost]
+
+TASK [configure : Restart OpenSSH service if changed] **************************
+changed: [localhost]
+
+TASK [configure : Make .ssh directory for root] ********************************
+changed: [localhost]
+
+TASK [configure : Add bitbucket to known hosts] ********************************
+ok: [localhost]
+
+TASK [configure : Copy over all files to modprobe.d] ***************************
+ok: [localhost] => (item=disable_uncommon_filesystems.conf)
+changed: [localhost] => (item=disable_uncommon_protocols.conf)
+
+TASK [configure : Copy over all files to sudoers.d] ****************************
+changed: [localhost] => (item=admin_group)
+ok: [localhost] => (item=ansible)
+changed: [localhost] => (item=ansible_group)
+changed: [localhost] => (item=devel_group)
+
+TASK [configure : Check if vagrant home folder exists] *************************
+ok: [localhost]
+
+TASK [configure : Check to see if mail aliases file is present in /etc/aliases] ***
+ok: [localhost]
+
+TASK [configure : Remove any root mail aliases] ********************************
+ok: [localhost]
+
+TASK [configure : Run newaliases and creates aliases] **************************
+skipping: [localhost]
+
+TASK [dependencies : Install epel release] *************************************
+ok: [localhost]
+
+TASK [dependencies : Install yum packages after epel installed] ****************
+ok: [localhost]
+
+TASK [dependencies : Remove unnecessary packages] ******************************
+ok: [localhost]
+
+TASK [cloudwatch-agent : Install required yum packages] ************************
+changed: [localhost]
+
+TASK [cloudwatch-agent : Ensure collectd is running and enabled on boot] *******
+ok: [localhost]
+
+TASK [cloudwatch-agent : Check if amazon-cloudwatch-agent service exists] ******
+ok: [localhost]
+
+TASK [cloudwatch-agent : Create a ./tmp/folder for all the files] **************
+changed: [localhost]
+
+TASK [cloudwatch-agent : Download cloudwatch agent archive] ********************
+changed: [localhost]
+
+TASK [cloudwatch-agent : Unzip ./AmazonCloudWatchAgent.zip] ********************
+changed: [localhost]
+
+TASK [cloudwatch-agent : run ./tmp/AmazonCloudWatchAgent/install.sh] ***********
+changed: [localhost]
+
+TASK [cloudwatch-agent : remove ./tmp/ folder] *********************************
+changed: [localhost]
+
+TASK [cloudwatch-agent : Check if /opt/aws/amazon-cloudwatch-agent/bin/config.json exists] ***
+ok: [localhost]
+
+TASK [cloudwatch-agent : Copy default /opt/aws/amazon-cloudwatch-agent/bin/config.json if needed] ***
+changed: [localhost]
+
+TASK [cloudwatch-agent : Ensure cloudwatch agent is running, and enabled on boot] ***
+ok: [localhost]
+
+TASK [alertlogic : Install AlertLogic package] *********************************
+changed: [localhost]
+
+TASK [alertlogic : Check if an AlertLogic host UUID has been assigned] *********
+ok: [localhost]
+
+TASK [alertlogic : Run configuration if the AlertLogic key has not been installed] ***
+ [WARNING]: Consider using the service module rather than running 'service'.
+If you need to use command because service is insufficient you can add 'warn:
+false' to this command task or set 'command_warnings=False' in ansible.cfg to
+get rid of this message.
+changed: [localhost]
+
+TASK [alertlogic : Ensure AlertLogic is running and enabled on boot] ***********
+changed: [localhost]
+
+TASK [nrpe : Clean up old monitoring path] *************************************
+ok: [localhost]
+
+TASK [nrpe : install required yum packages] ************************************
+changed: [localhost]
+
+TASK [nrpe : Allow Nagios monitoring from Raving Towers and Upland] ************
+changed: [localhost]
+
+TASK [nrpe : Remove any existing NRPE checks from main config] *****************
+changed: [localhost]
+
+TASK [nrpe : Create path for NRPE check_disk by querying all mounted partitions] ***
+ok: [localhost]
+
+TASK [nrpe : Set CPU warning/critical levels for NRPE on high CPU instances] ***
+skipping: [localhost]
+
+TASK [nrpe : Set CPU warning/critical levels for NRPE on other instances] ******
+ok: [localhost]
+
+TASK [nrpe : Ensure directory structure exists] ********************************
+ok: [localhost] => (item=etc)
+ok: [localhost] => (item=opt)
+ok: [localhost] => (item=etc/nrpe.d)
+skipping: [localhost] => (item=etc/nrpe.d/check_procs.cfg) 
+skipping: [localhost] => (item=etc/nrpe.d/check_services_active.cfg) 
+ok: [localhost] => (item=opt/rantandrave)
+changed: [localhost] => (item=opt/rantandrave/monitoring)
+skipping: [localhost] => (item=opt/rantandrave/monitoring/check_services_active.sh) 
+skipping: [localhost] => (item=etc/nrpe.d/check_disk.cfg) 
+skipping: [localhost] => (item=etc/nrpe.d/check_load.cfg) 
+
+TASK [nrpe : Copy over all static files] ***************************************
+skipping: [localhost] => (item=etc) 
+skipping: [localhost] => (item=opt) 
+skipping: [localhost] => (item=etc/nrpe.d) 
+changed: [localhost] => (item=etc/nrpe.d/check_procs.cfg)
+changed: [localhost] => (item=etc/nrpe.d/check_services_active.cfg)
+skipping: [localhost] => (item=opt/rantandrave) 
+skipping: [localhost] => (item=opt/rantandrave/monitoring) 
+changed: [localhost] => (item=opt/rantandrave/monitoring/check_services_active.sh)
+
+TASK [nrpe : Create all templated files] ***************************************
+skipping: [localhost] => (item=etc) 
+skipping: [localhost] => (item=etc/nrpe.d) 
+changed: [localhost] => (item=etc/nrpe.d/check_disk.cfg)
+changed: [localhost] => (item=etc/nrpe.d/check_load.cfg)
+
+TASK [nrpe : Check to see which SELinux modules are installed] *****************
+ok: [localhost]
+
+TASK [nrpe : Install NRPE/check_services_active SELinux module if not installed] ***
+changed: [localhost]
+
+TASK [nrpe : Ensure NRPE service is running, and enabled on boot] **************
+changed: [localhost]
+
+RUNNING HANDLER [cloudwatch-agent : cloudwatch_agent_fetch_config] *************
+changed: [localhost]
+
+RUNNING HANDLER [cloudwatch-agent : restart_amazon_cloudwatch_agent] ***********
+ok: [localhost]
+
+RUNNING HANDLER [alertlogic : restart al-agent] ********************************
+changed: [localhost]
+
+RUNNING HANDLER [alertlogic : restart syslog] **********************************
+changed: [localhost]
+
+RUNNING HANDLER [nrpe : restart_nrpe] ******************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=53   changed=29   unreachable=0    failed=0   
+
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [barman : Check that data volume is is available] *************************
+ok: [localhost]
+
+TASK [barman : Create the pgsql filesystem] ************************************
+changed: [localhost]
+
+TASK [barman : Mount barman backup FS] *****************************************
+changed: [localhost]
+
+TASK [barman : Copy over all static files] *************************************
+changed: [localhost]
+
+TASK [barman : Set permissions on credentials files] ***************************
+changed: [localhost] => (item=.ssh/id_rsa)
+changed: [localhost] => (item=.pgpass)
+
+TASK [barman : (Re)set SELinux context on SSH directory] ***********************
+changed: [localhost]
+
+TASK [barman : Install PostgreSQL repo] ****************************************
+changed: [localhost]
+
+TASK [barman : Install Barman] *************************************************
+[DEPRECATION WARNING]: Invoking "yum" only once while using a loop via 
+squash_actions is deprecated. Instead of using a loop to supply multiple items 
+and specifying `name: "{{ item }}"`, please use `name: ['barman', 
+'postgresql94', '{{ playbook_dir }}/roles/barman/includes/barman-
+utils-1.1-1.el7.noarch.rpm']` and remove the loop. This feature will be removed
+ in version 2.11. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+changed: [localhost] => (item=[u'barman', u'postgresql94', u'/opt/rantandrave/automation/FastFeedbackDBDeploy/roles/barman/includes/barman-utils-1.1-1.el7.noarch.rpm'])
+
+TASK [barman : Set ownership on barman directory] ******************************
+changed: [localhost]
+
+TASK [barman : Configure cron] *************************************************
+changed: [localhost]
+
+TASK [monitoring : Install NRPE client and plugins] ****************************
+ok: [localhost]
+
+TASK [monitoring : Allow Nagios monitoring from Raving Towers] *****************
+ok: [localhost]
+
+TASK [monitoring : Remove any existing NRPE checks from main config] ***********
+ok: [localhost]
+
+TASK [monitoring : Copy over all static files] *********************************
+changed: [localhost]
+
+TASK [monitoring : Create path for NRPE check_disk by querying all mounted partitions] ***
+ok: [localhost]
+
+TASK [monitoring : Set CPU warning/critical levels for NRPE on high CPU instances] ***
+skipping: [localhost]
+
+TASK [monitoring : Set CPU warning/critical levels for NRPE on other instances] ***
+ok: [localhost]
+
+TASK [monitoring : Define PostgreSQL idle pool size (max 1200 over 100GB RAM, 600 otherwise)] ***
+ok: [localhost]
+
+TASK [monitoring : Define PostgreSQL active pool size (max 1200 over 100GB RAM, 600 otherwise)] ***
+ok: [localhost]
+
+TASK [monitoring : Copy over all templated files] ******************************
+skipping: [localhost] => (item=etc) 
+skipping: [localhost] => (item=etc/nrpe.d) 
+changed: [localhost] => (item=etc/nrpe.d/check_load.cfg)
+changed: [localhost] => (item=etc/nrpe.d/check_pgsql.cfg)
+
+TASK [monitoring : Check to see which SELinux modules are installed] ***********
+ok: [localhost]
+
+TASK [monitoring : Install NRPE/Postgres SELinux module if not installed] ******
+changed: [localhost]
+
+TASK [monitoring : Enable NRPE service] ****************************************
+ok: [localhost]
+
+RUNNING HANDLER [monitoring : restart_nrpe] ************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=24   changed=13   unreachable=0    failed=0   
+

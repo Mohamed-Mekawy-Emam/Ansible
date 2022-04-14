@@ -1,0 +1,14 @@
+---
+- name: Remove New Group
+  hosts: all
+  tasks:
+    - name: Remove postgres Group Task
+      group:
+        name: postgres
+        state: absent
+    - name: Remove barman Group Task
+      group:
+        name: barman
+        state: absent
+...
+

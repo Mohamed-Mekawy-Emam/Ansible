@@ -1,0 +1,29 @@
+---
+- name: Delete New Users and Groups
+  hosts: all
+  tasks:
+    - name: Delete User Task
+      user:
+        name: "{{ item }}"
+        state: absent
+        remove: true
+      loop:
+        - postgres
+        - barman
+    - name: Remove postgres Group Task
+      group:
+        name: postgres
+        state: absent
+    - name: Remove barman Group Task
+      group:
+        name: barman
+        state: absent
+    - name: Removing /var/lib/pgsql
+      file:
+        path: "/var/lib/pgsql/"
+        state: absent
+    - name: Removing /var/lib/barman
+      file:
+        path: "/var/lib/barman/"
+        state: absent
+...

@@ -1,0 +1,49 @@
+---
+- name: Create New Users and Groups
+  hosts: all
+  tasks:
+    - name: Create postgres Group Task
+      group:
+        name: postgres
+        state: present
+    - name: Create barman Group Task
+      group:
+        name: barman
+        state: present
+
+    - name: Create User postgres Task
+      user:
+        name: postgres
+        state: present
+        comment: PostgreSQL Server
+        shell: /bin/bash
+        home: /var/lib/pgsql
+        group: postgres
+        groups: barman
+        append: yes
+    - name: Creating /var/lib/pgsql
+      file:
+        path: "/var/lib/pgsql/"
+        state: directory
+        mode: '0700'
+        owner: postgres
+        group: postgres
+
+    - name: Create User barman Task
+      user:
+        name: barman
+        state: present
+        comment: Backup and Recovery Manager for PostgreSQL
+        shell: /bin/bash
+        home: /var/lib/barman
+        group: barman
+        groups: postgres
+        append: yes
+    - name: Creating /var/lib/barman
+      file:
+        path: "/var/lib/barman/"
+        state: directory
+        mode: '0755'
+        owner: barman
+        group: barman
+...

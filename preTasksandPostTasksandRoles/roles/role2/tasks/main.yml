@@ -1,0 +1,20 @@
+---
+
+- name: Shell Echo test2
+  shell:
+    "echo test2"
+
+- name: Show host's ip all
+  debug: var=ansible_all_ipv4_addresses
+  register: role2status
+
+- name: Show host's ip default
+  debug: var=ansible_default_ipv4.address
+
+- name: Show host's ipv4
+  debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
+
+- name: Show host's ipv6
+  debug: var=hostvars[inventory_hostname]['ansible_default_ipv6']['address']
+
+...    

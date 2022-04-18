@@ -49,6 +49,7 @@
     - name: print versioninfo
       debug:
         msg: "{{ versioninfo.stdout_lines }}"  #to expose from ansible cmd which is invisible to us to our stdout
+        #msg: "{{ versioninfo }}"  #to expose from ansible cmd which is invisible to us to our stdout
 
     - name: Validate if the installation is intact
       assert:

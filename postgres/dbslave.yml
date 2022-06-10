@@ -26,4 +26,19 @@
           mode: 0600
           owner: memam
           group: memam
+
+      - name: Check for postgresql.conf file, if exist
+        stat:
+          path: /home/memam/Ansible/Ansible/postgres/data/postgresql.conf
+        register: postgresqlconf_stat
+
+      - name: Create config file symlink                         # This task can be removed if we will depend on master postgresql.conf file
+        file:
+          src: /home/memam/Ansible/Ansible/postgres/postgresql.conf.base
+          dest: /home/memam/Ansible/Ansible/postgres/data/postgresql.conf
+          state: link
+          owner: memam
+          group: memam
+        when: postgresqlconf_stat.stat.exists == False
+        
       when: recovery_stat.stat.exists == False

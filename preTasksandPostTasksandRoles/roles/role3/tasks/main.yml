@@ -1,0 +1,12 @@
+---
+- name: Execute test.sh script
+  shell: "chmod +x test.sh && ./test.sh"
+  register: chmodcmd
+  tags: chmodcmd
+  args:
+    chdir: '{{ role_path }}/files/'
+    warn: no
+    
+- name: Debug Message 
+  debug: msg="{{chmodcmd.stdout}}"
+...

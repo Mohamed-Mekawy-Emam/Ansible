@@ -1,0 +1,12 @@
+---
+- name: test role3
+  hosts: all
+  become: yes
+  become_user: root
+
+  vars_files:
+    - vars/global.yml
+
+  roles:
+    - role3
+...
